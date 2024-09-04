@@ -60,7 +60,7 @@ public class TwainLogger
         verbose_settings[3] = verbose_settings[2] | LoggingOptions.DECODE_TWMEMREF.value();
         verbose_settings[4] = verbose_settings[3] | LoggingOptions.DECODE_TWEVENT.value() ;
         verbose_settings[5] = LoggingOptions.LOGALL.value();
-        verbose_settings[6] = LoggerVerbosity.CUSTOM.ordinal();
+        verbose_settings[6] = LoggingOptions.LOGALL.value() & ~LoggingOptions.DECODE_SOURCE.value() & ~LoggingOptions.DECODE_DEST.value() & ~LoggingOptions.SHOW_ISTWAINMSG.value() & ~LoggingOptions.DECODE_TWEVENT.value();//LoggerVerbosity.CUSTOM.ordinal();
     }
 
     public int getVerbosityFlags()
